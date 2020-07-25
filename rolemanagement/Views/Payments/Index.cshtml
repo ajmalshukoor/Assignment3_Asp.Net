@@ -1,0 +1,57 @@
+﻿@model IEnumerable<rolemanagement.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Payments</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-success"><i class="glyphicon glyphicon-plus"></i>Payment</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCharge)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentDate)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                        <td>
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BillingId" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.BillingId" class="btn btn-danger">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.BillingId" class="btn btn-warning">Details</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

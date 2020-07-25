@@ -1,0 +1,66 @@
+﻿@model IEnumerable<rolemanagement.Models.Room>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rooms</h1>
+
+<p>
+    <a asp-action="Create" onclick="alert('You must have a valid customer Id to book a room!')" class="btn btn-outline-success"><i class="glyphicon glyphicon-plus"></i>Book Room</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberofBeds)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberofBeds)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.RoomNumber" class="btn btn-primary">Change Room</a> 
+                <a asp-action="Delete" asp-route-id="@item.RoomNumber" class="btn btn-danger">Check Out</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

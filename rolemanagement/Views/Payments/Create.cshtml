@@ -1,0 +1,56 @@
+﻿@model rolemanagement.Models.Payment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Pay</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="CustomerId" class="control-label"></label>
+                    <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="TotalCharge" class="control-label"></label>
+                    <input asp-for="TotalCharge" class="form-control" />
+                    <span asp-validation-for="TotalCharge" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="CardNumber" class="control-label"></label>
+                    <input asp-for="CardNumber" class="form-control" />
+                    <span asp-validation-for="CardNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="CVV" class="control-label"></label>
+                    <input asp-for="CVV" class="form-control" />
+                    <span asp-validation-for="CVV" class="text-danger"></span>
+                </div>
+            </div>
+                <div class="form-group">
+                    <label asp-for="PaymentDate" class="control-label"></label>
+                    <input asp-for="PaymentDate" class="form-control" />
+                    <span asp-validation-for="PaymentDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Pay" class="btn btn-primary" onclick="alert('The customer has been paid')" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-danger">Cancel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

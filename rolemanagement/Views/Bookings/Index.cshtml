@@ -1,0 +1,61 @@
+﻿@model IEnumerable<rolemanagement.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reservation</h1>
+
+<p>
+    <a asp-action="Create" onclick="alert('If you did not register customer and book room you can\'t do reservation!')" class="btn btn-outline-success"><i class="glyphicon glyphicon-plus"></i>Reserve Room</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RoomNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberofPersons)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberofPersons)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BookingNumber" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.BookingNumber" class="btn btn-danger">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.BookingNumber" class="btn btn-warning">Details</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
