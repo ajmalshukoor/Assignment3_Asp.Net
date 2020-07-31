@@ -227,3 +227,4 @@ C:\Users\Aju\Desktop\rolemanagement\rolemanagement\obj\Debug\netcoreapp3.1\Razor
 C:\Users\Aju\Desktop\rolemanagement\rolemanagement\obj\Debug\netcoreapp3.1\Razor\Views\Rooms\Edit.cshtml.g.cs
 C:\Users\Aju\Desktop\rolemanagement\rolemanagement\obj\Debug\netcoreapp3.1\Razor\Views\Rooms\Index.cshtml.g.cs
 C:\Users\Aju\Desktop\rolemanagement\rolemanagement\obj\Debug\netcoreapp3.1\Razor\Views\Administration\DeleteRole.cshtml.g.cs
+C:\Users\Aju\Desktop\rolemanagement\rolemanagement\obj\Debug\netcoreapp3.1\Razor\wwwroot\RoomImages.cshtml.g.cs

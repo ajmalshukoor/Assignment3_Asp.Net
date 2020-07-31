@@ -3,6 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<script src=" https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
 
 <h1>Payments</h1>
 
@@ -30,28 +38,29 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-                        <td>
-                @Html.DisplayFor(modelItem => item.Customer.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalCharge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PaymentDate)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCharge)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PaymentDate)
+                </td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BillingId" class="btn btn-primary">Edit</a>
-                <a asp-action="Delete" asp-route-id="@item.BillingId" class="btn btn-danger">Delete</a>
-                <a asp-action="Details" asp-route-id="@item.BillingId" class="btn btn-warning">Details</a>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BillingId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.BillingId" class="btn btn-danger">Delete</a>
+                    <a asp-action="Details" asp-route-id="@item.BillingId" class="btn btn-warning">Details</a>
 
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

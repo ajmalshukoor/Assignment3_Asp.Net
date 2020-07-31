@@ -27,6 +27,7 @@ namespace rolemanagement.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public IActionResult CreateRole()
         {
@@ -79,6 +80,9 @@ namespace rolemanagement.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        /* new@gmail.com
+         * password: 123Ajmal123.
+         */
 
         [HttpGet]
 
@@ -352,9 +356,9 @@ namespace rolemanagement.Controllers
             */
 
 
-        }
-
-
     }
+
+
+}
 
 
